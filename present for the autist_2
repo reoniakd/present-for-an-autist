@@ -1,0 +1,102 @@
+        typing_effect("Happy 26th Birthday! 🎂")
+        typing_effect("Wishing you endless inspiration, brilliant ideas, and great creative success.")
+        typing_effect("May your career soar to new heights, and may every project be a triumph.")
+        typing_effect("Thank you for being such an amazing online friend!")
+        typing_effect("Have a wonderful day in Germany! 🇩🇪✨\n")
+import time
+import sys
+import os
+
+# Цвета для украшения терминала
+PURPLE = '\033[95m'
+GREEN = '\033[92m'
+CYAN = '\033[96m'
+YELLOW = '\033[93m'
+RESET = '\033[0m'
+BOLD = '\033[1m'
+
+def typing_effect(text, delay=0.04):
+    """Эффект печатающегося текста"""
+    for char in text:
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(delay)
+    print()
+
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+# ASCII-арт Вистерии (Глицинии)
+WISTERIA_ART = f"""
+{GREEN}          .-'''-.  
+       _.'  _   _  '._
+     .'  _.' '._' '._  '.
+    /  .'        '.  '.  \\
+   |  /            \\   |  |
+    \\ |   {PURPLE} ( ) ( ) {GREEN}  | /  /
+     '.\\  {PURPLE} ( ) ( ) {GREEN} /.'_.'
+        '._ {PURPLE}( )( ){GREEN} _.'
+           |  ||  |
+           |  ||  |
+           |  ||  |     {PURPLE}.-.
+           |  ||  |    (   )
+           |  ||  |     '-' {GREEN}.-.
+      {PURPLE} .-.  {GREEN}|  ||  | {PURPLE}.-.      (   )
+      (   ) {GREEN}|  ||  |{PURPLE}(   )      '-'
+       '-'  {GREEN}|  ||  | {PURPLE}'-'
+            |  ||  |
+       {PURPLE} .-.  {GREEN}|  ||  |
+       (   )  /  \\\\
+        '-'  /    \\\\
+            /  /\  \\\\
+           /  /  \\  \\\\
+          /  /    \\  \\\\
+         /  /      \\  \\\\
+        '-'         '-'
+      {PURPLE}(   )       (   )
+       '-'         '-'
+{RESET}"""
+
+def main():
+    clear_screen()
+    typing_effect(f"{CYAN}[System]: Checking system requirements... OK{RESET}")
+    time.sleep(1)
+    typing_effect(f"{CYAN}[System]: Found 1 uncompiled package: 'Wisteria_Seed_v26.0'{RESET}")
+    time.sleep(1.5)
+    
+    # Интерактивный вопрос
+    answer = input(f"\n{YELLOW}Do you want to initialize and water the seed? (Y/N): {RESET}").strip().lower()
+    
+    if answer == 'y':
+        clear_screen()
+        typing_effect(f"{GREEN}Watering the seed...{RESET}\n")
+        time.sleep(1)
+        
+        # Эффект роста дерева
+        for i in range(1, 4):
+            sys.stdout.write(f"\r{GREEN}Growing" + "." * i + f"{RESET}")
+            sys.stdout.flush()
+            time.sleep(0.8)
+        print("\n")
+        
+        # Появление вистерии
+        print(WISTERIA_ART)
+        time.sleep(1)
+        
+        # Поздравление
+        print(f"{BOLD}{PURPLE}=================================================={RESET}")
+        typing_effect(f"{BOLD}{YELLOW}      HAPPY 26th BIRTHDAY, MY FRIEND! 🎉{RESET}", 0.08)
+        print(f"{BOLD}{PURPLE}=================================================={RESET}\n")
+        
+        typing_effect("Happy 26th Birthday! 🎂")
+        typing_effect("Wishing you endless inspiration, brilliant ideas, and great creative success.")
+        typing_effect("May your career soar to new heights, and may every project be a triumph.")
+        typing_effect("Thank you for being such an amazing online friend!")
+        typing_effect("Have a wonderful day in Germany! 🇩🇪✨\n")
+        
+        input(f"{CYAN}Press Enter to exit the simulation...{RESET}")
+    else:
+        print(f"\n{PURPLE}The seed remains asleep. Maybe next year! 😊{RESET}")
+
+if __name__ == "__main__":
+    main()
